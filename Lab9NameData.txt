@@ -1,0 +1,7 @@
+Pele 12 3 14
+Maradona 8 8 4
+Usabio 4 9.7 9
+Figo 9 3 
+Socrates 8 8 8
+Giggs 6 a
+Juninho 7 12 45
