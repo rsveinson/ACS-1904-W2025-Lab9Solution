@@ -15,12 +15,18 @@ public class ReadNamesFromXMLWhithWhileTrue {
         decoder = getStream(fileName);
 
         if(decoder != null){
+            JOptionPane.showMessageDialog(null, "Success, file found");
             loadList(list, decoder);
-            printList(list);
+            //printList(list);
             // close the stream
             decoder.close();
         }// end if
+        else{
+            JOptionPane.showMessageDialog(null, "Error, file not found");
+        }// end file not found
 
+        printList(list);
+        
         // closing message
         System.out.println("end of program");
     }//end main
@@ -35,10 +41,10 @@ public class ReadNamesFromXMLWhithWhileTrue {
 
         try{
             decoder = new XMLDecoder(new FileInputStream(fileName));
-            JOptionPane.showMessageDialog(null, "Success, file found");
+            //JOptionPane.showMessageDialog(null, "Success, file found");
         }// end try
         catch(FileNotFoundException e){
-            JOptionPane.showMessageDialog(null, "Error, file not found");
+            //JOptionPane.showMessageDialog(null, "Error, file not found");
             decoder = null;
         }
 
@@ -49,7 +55,7 @@ public class ReadNamesFromXMLWhithWhileTrue {
         boolean eof = false;
         String strin;
         try{
-            while(!eof){
+            while(true){
 
                 strin = (String)decoder.readObject();
                 l.add(strin);
